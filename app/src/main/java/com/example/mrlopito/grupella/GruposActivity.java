@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-public class GrupoActivity extends AppCompatActivity {
+public class GruposActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,16 +23,16 @@ public class GrupoActivity extends AppCompatActivity {
 
         List<Grupo> grupos = todosOsGrupos();
         ListView listView = (ListView) findViewById(R.id.listview);
-        ArrayAdapter<Grupo> adapter = new ArrayAdapter<Grupo>(this, android.R.layout.simple_list_item_1, grupos);
-        //AdapterGrupos adapter = new AdapterGrupos(grupos, this);
+        //ArrayAdapter<Grupo> adapter = new ArrayAdapter<Grupo>(this, android.R.layout.simple_list_item_1, grupos);
+        AdapterGrupos adapter = new AdapterGrupos(grupos, this, listView);
 
         listView.setAdapter(adapter);
     }
 
     public List<Grupo> todosOsGrupos() {
         List<Grupo> eList = new LinkedList<Grupo>();
-        eList.add(new Grupo("FTC", "Grupo de estudo", true));
-        eList.add(new Grupo("FTC", "Grupo de estudo", false));
+        eList.add(new Grupo("FTC", "Grupo de estudo", true, "https://tremendadespedida.com/wp-content/uploads/2016/11/Restaurante-despedida-soltero-1.jpg"));
+        eList.add(new Grupo("FTC", "Grupo de estudo", false, "https://tremendadespedida.com/wp-content/uploads/2016/11/Restaurante-despedida-soltero-1.jpg"));
 
         return eList;
     }

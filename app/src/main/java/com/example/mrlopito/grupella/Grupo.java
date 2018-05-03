@@ -3,12 +3,22 @@ package com.example.mrlopito.grupella;
 public class Grupo {
     private String nome;
     private String descricao;
+    private String photoURL;
     private Boolean publico;
 
-    public Grupo(String nome, String descricao, Boolean publico) {
+    public Grupo(String nome, String descricao, Boolean publico,String photoURL) {
         this.nome = nome;
         this.descricao = descricao;
         this.publico = publico;
+        this.photoURL = photoURL;
+    }
+
+    public String getPhotoURL() {
+        return photoURL;
+    }
+
+    public void setPhotoURL(String photoURL) {
+        this.photoURL = photoURL;
     }
 
     public String getNome() {

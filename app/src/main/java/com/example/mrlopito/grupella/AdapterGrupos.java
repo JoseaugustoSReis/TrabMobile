@@ -2,24 +2,28 @@ package com.example.mrlopito.grupella;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.mrlopito.grupella.Grupo;
-import com.example.mrlopito.grupella.R;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterGrupos extends BaseAdapter {
     private final List<Grupo> grupos;
     private final Activity act;
+    private final ListView listView;
 
-    public AdapterGrupos(List<Grupo> grupos, Activity act) {
+    public List<Grupo> toFilter = new ArrayList<Grupo>();
+
+    public AdapterGrupos(List<Grupo> grupos, Activity act, ListView listView1) {
         this.grupos = grupos;
         this.act = act;
+        this.listView = listView1;
     }
     @Override
     public int getCount() {
@@ -38,22 +42,28 @@ public class AdapterGrupos extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        @SuppressLint("ViewHolder") View view = act.getLayoutInflater()
-                .inflate(R.layout.item, parent, false);
-        Grupo grupo = grupos.get(position);
+        @SuppressLint("ViewHolder") View view = act.getLayoutInflater().inflate(R.layout.grupos_row, parent, false);
+        Grupo grupo;
+        if (toFilter.size() == 0) {
+            grupo = grupos.get(position);
+        } else {
+            grupo = toFilter.get(position);
+        }
 
-        //pegando as referências das Views
+        Context c = parent.getContext();
         TextView nome = (TextView)
-                view.findViewById(R.id.lista_curso_personalizada_nome);
+                view.findViewById(R.id.estabelecimento_nome);
         TextView descricao = (TextView)
-                view.findViewById(R.id.lista_curso_personalizada_descricao);
+                view.findViewById(R.id.estabelecimento_descricao);
         ImageView imagem = (ImageView)
-                view.findViewById(R.id.lista_curso_personalizada_imagem);
+                view.findViewById(R.id.estabelecimento_imagem);
 
         //populando as Views
         nome.setText(grupo.getNome());
         descricao.setText(grupo.getDescricao());
-        imagem.setImageResource(R.drawable.ic_login);
-        return null;
+        PicassoClient.downloadImage(c, grupo.getPhotoURL(), imagem);
+
+        return view;
     }
+
 }
