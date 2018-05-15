@@ -1,7 +1,9 @@
-package com.example.mrlopito.grupella;
+package com.example.mrlopito.grupella.view.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.mrlopito.grupella.R;
 
 public class MainActivity extends AppCompatActivity {
 

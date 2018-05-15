@@ -1,4 +1,4 @@
-package com.example.mrlopito.grupella;
+package com.example.mrlopito.grupella.view.adapter;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -9,6 +9,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.mrlopito.grupella.model.entity.Grupo;
+import com.example.mrlopito.grupella.model.service.PicassoClient;
+import com.example.mrlopito.grupella.R;
 
 import java.util.ArrayList;
 import java.util.List;

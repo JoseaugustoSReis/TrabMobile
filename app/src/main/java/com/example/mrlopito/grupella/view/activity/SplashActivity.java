@@ -1,9 +1,11 @@
-package com.example.mrlopito.grupella;
+package com.example.mrlopito.grupella.view.activity;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.mrlopito.grupella.R;
 
 public class SplashActivity extends AppCompatActivity {
     // Timer da splash screen

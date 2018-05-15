@@ -1,4 +1,4 @@
-package com.example.mrlopito.grupella;
+package com.example.mrlopito.grupella.model.service;
 
 import android.content.Context;
 import android.widget.ImageView;

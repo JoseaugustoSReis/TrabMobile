@@ -1,4 +1,4 @@
-package com.example.mrlopito.grupella;
+package com.example.mrlopito.grupella.model.entity;
 
 public class Grupo {
     private String nome;
