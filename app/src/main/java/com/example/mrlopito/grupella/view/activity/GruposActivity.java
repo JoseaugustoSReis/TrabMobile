@@ -1,8 +1,13 @@
 package com.example.mrlopito.grupella.view.activity;
 
+import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.mrlopito.grupella.R;
 import com.example.mrlopito.grupella.view.adapter.AdapterGrupos;
@@ -20,11 +25,35 @@ public class GruposActivity extends AppCompatActivity {
 
 
         List<Grupo> grupos = todosOsGrupos();
-        ListView listView = (ListView) findViewById(R.id.listview);
+        final ListView listView = (ListView) findViewById(R.id.listview);
         //ArrayAdapter<Grupo> adapter = new ArrayAdapter<Grupo>(this, android.R.layout.simple_list_item_1, grupos);
         AdapterGrupos adapter = new AdapterGrupos(grupos, this, listView);
 
         listView.setAdapter(adapter);
+
+        // seta o listener para pegar o click do usuário no item do seu list View
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                // pega o o item selecionado com os dados do grupo
+                Grupo grupo = (Grupo) listView.getItemAtPosition(position);
+
+                // cria a intent
+                Intent intent = new Intent(GruposActivity.this, GrupoDetalheActivity.class);
+
+                // seta o parametro do grupo a exibir os dados
+                intent.putExtra( "grupo" , (Parcelable) grupo);
+
+                //  chama a Activity que mostra os detalhes
+                startActivity(intent);
+
+            }
+
+        });
+
+
+
     }
 
     public List<Grupo> todosOsGrupos() {
