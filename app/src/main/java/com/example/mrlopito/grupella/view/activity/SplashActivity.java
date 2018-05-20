@@ -1,9 +1,11 @@
-package com.example.mrlopito.grupella;
+package com.example.mrlopito.grupella.view.activity;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.mrlopito.grupella.R;
 
 public class SplashActivity extends AppCompatActivity {
     // Timer da splash screen
@@ -22,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 // Esse método será executado sempre que o timer acabar
                 // E inicia a activity principal
-                Intent i = new Intent(SplashActivity.this, GrupoActivity.class);
+                Intent i = new Intent(SplashActivity.this, GruposActivity.class);
                 startActivity(i);
 
                 // Fecha esta activity

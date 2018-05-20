@@ -1,4 +1,4 @@
-package com.example.mrlopito.grupella;
+package com.example.mrlopito.grupella.view.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.nio.file.Files;
+import com.example.mrlopito.grupella.R;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText edtEmailUser;
