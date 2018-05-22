@@ -3,15 +3,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     tools:context="view.activity.GrupoDetalheActivity">
+
+    <ImageView
+        android:id="@+id/detalhe_grupo_imagem"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|left"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/detalhe_grupo_nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:paddingTop="20dp"/>
+
+
+    </LinearLayout>
+
+
+
 
     <com.example.mrlopito.grupella.view.widget.BottomNavigatorView
         android:id="@+id/bottomNavigatorView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white" />
-
 
     <FrameLayout
         android:id="@+id/container"
