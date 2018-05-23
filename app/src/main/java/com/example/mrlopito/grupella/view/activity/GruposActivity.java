@@ -43,7 +43,7 @@ public class GruposActivity extends AppCompatActivity {
                 Intent intent = new Intent(GruposActivity.this, GrupoDetalheActivity.class);
 
                 // seta o parametro do grupo a exibir os dados
-                intent.putExtra( "grupo" , (Parcelable) grupo);
+                intent.putExtra( "grupo" ,  grupo);
 
                 //  chama a Activity que mostra os detalhes
                 startActivity(intent);

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "129132723147",
+    "firebase_url": "https://grupella-victor.firebaseio.com",
+    "project_id": "grupella-victor",
+    "storage_bucket": "grupella-victor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129132723147:android:518882557f5681f5",
+        "android_client_info": {
+          "package_name": "com.example.mrlopito.grupella"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129132723147-1nd6rqfqf01fqto1njg3sjk9jcg8tjmc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mrlopito.grupella",
+            "certificate_hash": "1ac1ad90872883e369d68284cf7126267b9f870b"
+          }
+        },
+        {
+          "client_id": "129132723147-8r58kgdg6n162r49sistfsgul145o40s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0alxjFqx0yNmXkisNjRd3_3sMAMfWm7g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129132723147-8r58kgdg6n162r49sistfsgul145o40s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
