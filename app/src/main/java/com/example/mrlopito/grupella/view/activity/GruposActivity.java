@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -16,6 +17,8 @@ import com.example.mrlopito.grupella.model.entity.Grupo;
 import java.util.LinkedList;
 import java.util.List;
 
+import static android.webkit.ConsoleMessage.MessageLevel.LOG;
+
 public class GruposActivity extends AppCompatActivity {
 
     @Override
@@ -26,7 +29,6 @@ public class GruposActivity extends AppCompatActivity {
 
         List<Grupo> grupos = todosOsGrupos();
         final ListView listView = (ListView) findViewById(R.id.listview);
-        //ArrayAdapter<Grupo> adapter = new ArrayAdapter<Grupo>(this, android.R.layout.simple_list_item_1, grupos);
         AdapterGrupos adapter = new AdapterGrupos(grupos, this, listView);
 
         listView.setAdapter(adapter);
@@ -58,7 +60,7 @@ public class GruposActivity extends AppCompatActivity {
 
     public List<Grupo> todosOsGrupos() {
         List<Grupo> eList = new LinkedList<Grupo>();
-        eList.add(new Grupo("FTC", "Grupo de estudo", true, "https://tremendadespedida.com/wp-content/uploads/2016/11/Restaurante-despedida-soltero-1.jpg"));
+        eList.add(new Grupo("Estruturada de dados", "Grupo de estudo de ESD", true, "https://tremendadespedida.com/wp-content/uploads/2016/11/Restaurante-despedida-soltero-1.jpg"));
         eList.add(new Grupo("FTC", "Grupo de estudo", false, "https://tremendadespedida.com/wp-content/uploads/2016/11/Restaurante-despedida-soltero-1.jpg"));
 
         return eList;

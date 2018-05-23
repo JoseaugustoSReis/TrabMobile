@@ -9,9 +9,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 import com.example.mrlopito.grupella.R;
+import com.example.mrlopito.grupella.view.activity.GrupoDetalheActivity;
 
 import java.lang.ref.WeakReference;
 
@@ -27,6 +29,7 @@ public class MainFragment extends Fragment {
     private static Handler sHandler = new Handler(Looper.getMainLooper());
 
     private WeakRunnable mRunnable = new WeakRunnable(this);
+
 
     //private ProgressBar progressBar;
 
@@ -56,6 +59,8 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        ((GrupoDetalheActivity) getActivity()).onFragmentViewCreated(view);
         //progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
     }
 

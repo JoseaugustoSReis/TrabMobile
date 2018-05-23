@@ -7,14 +7,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/button_shape"
+            android:text="Entrar no Grupo"
+            android:textColor="@color/md_white_1000" />
+
         <TextView
+            android:id="@+id/detalhe_grupo_descricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fragment Main"
+            android:layout_marginTop="20sp"
             android:textColor="?android:attr/colorMultiSelectHighlight"
             android:textSize="20sp" />
     </LinearLayout>
 
 </FrameLayout>
+
+

@@ -57,14 +57,11 @@ public class AdapterGrupos extends BaseAdapter {
         Context c = parent.getContext();
         TextView nome = (TextView)
                 view.findViewById(R.id.estabelecimento_nome);
-        TextView descricao = (TextView)
-                view.findViewById(R.id.estabelecimento_descricao);
         ImageView imagem = (ImageView)
                 view.findViewById(R.id.estabelecimento_imagem);
 
         //populando as Views
         nome.setText(grupo.getNome());
-        descricao.setText(grupo.getDescricao());
         PicassoClient.downloadImage(c, grupo.getPhotoURL(), imagem);
 
         return view;

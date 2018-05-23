@@ -11,7 +11,7 @@ import com.example.mrlopito.grupella.view.fragment.MainFragment;
  */
 public class FragmentAdapter implements FragmentNavigatorAdapter {
 
-    private static final String TABS[] = {"Main", "Primary", "Second"};
+    private static final String TABS[] = {"Descrição", "Localização", "Dados"};
 
     @Override
     public Fragment onCreateFragment(int position) {
