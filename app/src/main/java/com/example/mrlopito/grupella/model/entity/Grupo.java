@@ -1,6 +1,12 @@
 package com.example.mrlopito.grupella.model.entity;
 
-public class Grupo {
+import java.io.Serializable;
+
+<<<<<<< HEAD
+public class Grupo implements Serializable{
+=======
+public class Grupo implements Serializable {
+>>>>>>> fe7dd1aeba00a913225c1fa2944ae13b912c54ba
     private String nome;
     private String descricao;
     private String photoURL;
