@@ -80,10 +80,10 @@ public class GrupoDetalheActivity extends AppCompatActivity implements BottomNav
 
     public void onFragmentViewCreated(View view) {
         // Iniciar os campos buscando no layout do Fragment
-        descricao
-                = (TextView) view.findViewById(R.id.detalhe_grupo_descricao);
+       // descricao
+              //  = (TextView) view.findViewById(R.id.detalhe_grupo_descricao);
 
-        descricao.setText(this.grupo.getDescricao());
+       // descricao.setText(this.grupo.getDescricao());
     }
 
     @Override

@@ -60,7 +60,7 @@ public class MainFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ((GrupoDetalheActivity) getActivity()).onFragmentViewCreated(view);
+        //((GrupoDetalheActivity) getActivity()).onFragmentViewCreated(view);
         //progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
     }
 
