@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.mrlopito.grupella.R;
 import com.example.mrlopito.grupella.model.entity.Grupo;
+import com.example.mrlopito.grupella.model.service.DataTest;
 import com.example.mrlopito.grupella.model.service.PicassoClient;
 import com.example.mrlopito.grupella.view.adapter.FragmentAdapter;
 import com.example.mrlopito.grupella.view.fragment.FragmentNavigator;
@@ -27,7 +28,6 @@ public class GrupoDetalheActivity extends AppCompatActivity implements BottomNav
     private BottomNavigatorView bottomNavigatorView;
 
     private TextView nome;
-    private TextView descricao;
     private ImageView imagem;
 
     private Grupo grupo;
@@ -38,7 +38,6 @@ public class GrupoDetalheActivity extends AppCompatActivity implements BottomNav
         super.onCreate(savedInstanceState);
         setContentView(R.layout.informacoes_grupo);
 
-        //mNavigator = new FragmentNavigator(getSupportFragmentManager(), new FragmentAdapter(), 0);
         mNavigator = new FragmentNavigator(getSupportFragmentManager(), new FragmentAdapter(), R.id.container);
         mNavigator.setDefaultPosition(DEFAULT_POSITION);
         mNavigator.onCreate(savedInstanceState);
@@ -78,12 +77,19 @@ public class GrupoDetalheActivity extends AppCompatActivity implements BottomNav
 
     }
 
-    public void onFragmentViewCreated(View view) {
+    /**
+     * Comunica o com fragment principal
+     * @param view
+     */
+    public void onFragmentMainViewCreated(View view) {
         // Iniciar os campos buscando no layout do Fragment
-       // descricao
-              //  = (TextView) view.findViewById(R.id.detalhe_grupo_descricao);
+        TextView descricao
+               = (TextView) view.findViewById(R.id.detalhe_grupo_descricao);
+        TextView nomeUsuario
+                = (TextView) view.findViewById(R.id.detalhe_grupo_nome_usuario);
 
-       // descricao.setText(this.grupo.getDescricao());
+        descricao.setText( this.grupo.getDescricao() );
+        nomeUsuario.setText( DataTest.getUsuario( this.grupo.getId_moderador() ).getNome() );
     }
 
     @Override

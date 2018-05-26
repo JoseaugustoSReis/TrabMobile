@@ -5,12 +5,15 @@ import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.mrlopito.grupella.R;
+import com.example.mrlopito.grupella.model.service.DataTest;
 import com.example.mrlopito.grupella.view.adapter.AdapterGrupos;
 import com.example.mrlopito.grupella.model.entity.Grupo;
 
@@ -27,7 +30,9 @@ public class GruposActivity extends AppCompatActivity {
         setContentView(R.layout.activity_grupo);
 
 
-        List<Grupo> grupos = todosOsGrupos();
+
+
+        List<Grupo> grupos = DataTest.todosOsGrupos();
         final ListView listView = (ListView) findViewById(R.id.listview);
         AdapterGrupos adapter = new AdapterGrupos(grupos, this, listView);
 
@@ -54,15 +59,16 @@ public class GruposActivity extends AppCompatActivity {
 
         });
 
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate( R.menu.menu_incial, menu );
+        return super.onCreateOptionsMenu( menu );
 
     }
 
-    public List<Grupo> todosOsGrupos() {
-        List<Grupo> eList = new LinkedList<Grupo>();
-        eList.add(new Grupo("Estruturada de dados", "Grupo de estudo de ESD", true, "https://tremendadespedida.com/wp-content/uploads/2016/11/Restaurante-despedida-soltero-1.jpg"));
-        eList.add(new Grupo("FTC", "Grupo de estudo", false, "https://tremendadespedida.com/wp-content/uploads/2016/11/Restaurante-despedida-soltero-1.jpg"));
 
-        return eList;
-    }
 }

@@ -19,13 +19,48 @@
             android:text="Entrar no Grupo"
             android:textColor="@color/md_white_1000" />
 
-        <TextView
-            android:id="@+id/detalhe_grupo_descricao"
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
+            android:layout_marginTop="@dimen/margin_long"
+            android:background="@color/md_red_200"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:gravity="center_horizontal"
+                android:text="Adiministrador"
+                android:typeface="sans"
+                android:layout_weight="1"
+                android:textColor="@color/md_black_1000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/detalhe_grupo_nome_usuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:typeface="serif"
+                android:textColor="@color/md_black_1000"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/detalhe_grupo_descricao"
+            android:layout_width="248dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_long"
+            android:gravity="center_horizontal"
             android:textColor="?android:attr/colorMultiSelectHighlight"
             android:textSize="20sp" />
+
     </LinearLayout>
 
 </FrameLayout>

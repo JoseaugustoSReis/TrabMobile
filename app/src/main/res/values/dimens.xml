@@ -3,4 +3,10 @@
 
     <!-- Splash -->
     <dimen name="txt_size">30dp</dimen>
+
+
+    <!-- Margin -->
+    <dimen name="margin_normal">10dp</dimen>
+    <dimen name="margin_med">20dp</dimen>
+    <dimen name="margin_long">30dp</dimen>
 </resources>
