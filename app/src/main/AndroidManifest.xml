@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".view.activity.MainActivity" />
-        <activity android:name=".view.activity.LoginActivity" />
-        <activity android:name=".view.activity.SplashActivity"
+        <activity
+            android:name=".view.activity.SplashActivity"
             android:theme="@style/AppCompat.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,8 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.GruposActivity"></activity>
-        <activity android:name=".view.activity.GrupoDetalheActivity"></activity>
+        <activity android:name=".view.activity.GruposActivity" />
+        <activity android:name=".view.activity.GrupoDetalheActivity" />
+        <activity
+            android:name=".view.activity.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".view.activity.LoginActivity" />
+        <activity android:name=".view.activity.ActivityCadastro"></activity>
     </application>
 
 </manifest>
