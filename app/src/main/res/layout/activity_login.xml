@@ -9,47 +9,43 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="112dp"
+        android:layout_width="116dp"
         android:layout_height="86dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginEnd="144dp"
+        android:layout_marginTop="28dp"
         android:src="@mipmap/ic_logo_round"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edtEmail"
-        android:layout_width="303dp"
+        android:layout_width="324dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginTop="60dp"
         android:ems="10"
+        android:hint="Insira seu e-mail"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        android:hint="Insira seu e-mail"/>
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
         android:id="@+id/edtSenha"
-        android:layout_width="303dp"
+        android:layout_width="324dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="Insira sua senha"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmail"
-        android:hint="Insira sua senha"/>
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="303dp"
+        android:layout_width="324dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginTop="24dp"
         android:onClick="AbrirHome"
         android:text="Logar"
@@ -58,10 +54,9 @@
 
     <Button
         android:id="@+id/btnCadastrar"
-        android:layout_width="303dp"
+        android:layout_width="324dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginTop="24dp"
         android:onClick="AbrirCadastro"
         android:text="Criar uma conta"
