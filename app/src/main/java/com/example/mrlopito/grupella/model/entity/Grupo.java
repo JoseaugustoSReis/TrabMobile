@@ -3,7 +3,8 @@ package com.example.mrlopito.grupella.model.entity;
 import java.io.Serializable;
 
 
-public class Grupo implements Serializable {
+public class Grupo implements Serializable{
+
 
     private String nome;
     private String descricao;

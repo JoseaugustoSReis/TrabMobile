@@ -9,19 +9,25 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="112dp"
+        android:layout_width="116dp"
         android:layout_height="86dp"
+<<<<<<< HEAD
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
+=======
+        android:layout_marginEnd="144dp"
+        android:layout_marginTop="28dp"
+>>>>>>> 115eb9e0b1b101969a1df6fac4e9690228411427
         android:src="@mipmap/ic_logo_round"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+<<<<<<< HEAD
         android:id="@+id/edtNome"
         android:layout_width="303dp"
         android:layout_height="wrap_content"
@@ -29,38 +35,59 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+=======
+        android:id="@+id/edtEmail"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+>>>>>>> 115eb9e0b1b101969a1df6fac4e9690228411427
         android:layout_marginTop="60dp"
         android:ems="10"
         android:hint="Insira seu e-mail"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
         app:layout_constraintStart_toStartOf="parent"
+=======
+>>>>>>> 115eb9e0b1b101969a1df6fac4e9690228411427
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
         android:id="@+id/edtSenha"
-        android:layout_width="303dp"
+        android:layout_width="324dp"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+=======
+        android:layout_marginEnd="40dp"
+>>>>>>> 115eb9e0b1b101969a1df6fac4e9690228411427
         android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="Insira sua senha"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtNome" />
+=======
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+>>>>>>> 115eb9e0b1b101969a1df6fac4e9690228411427
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="303dp"
+        android:layout_width="324dp"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+=======
+        android:layout_marginEnd="40dp"
+>>>>>>> 115eb9e0b1b101969a1df6fac4e9690228411427
         android:layout_marginTop="24dp"
         android:onClick="AbrirHome"
         android:text="Logar"
@@ -70,13 +97,17 @@
 
     <Button
         android:id="@+id/btnCadastrar"
-        android:layout_width="303dp"
+        android:layout_width="324dp"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+=======
+        android:layout_marginEnd="40dp"
+>>>>>>> 115eb9e0b1b101969a1df6fac4e9690228411427
         android:layout_marginTop="24dp"
         android:onClick="AbrirCadastro"
         android:text="Criar uma conta"
