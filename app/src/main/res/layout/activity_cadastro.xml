@@ -33,7 +33,6 @@
         android:hint="Insira seu nome"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -97,7 +96,6 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:onClick="cadastrarUsuario"
         android:text="Salvar"
         app:layout_constraintBottom_toTopOf="@+id/txtRetornarLogin"
         app:layout_constraintEnd_toEndOf="parent"
