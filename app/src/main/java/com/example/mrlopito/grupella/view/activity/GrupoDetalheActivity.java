@@ -69,12 +69,6 @@ public class GrupoDetalheActivity extends AppCompatActivity implements BottomNav
         this.grupo =
                 (Grupo) getIntent().getSerializableExtra("grupo");
 
-        Button entrarGrupo = findViewById(R.id.entrar_grupo);
-        if(new ControllerDB(GrupoDetalheActivity.this).inscricao_grupo(DataTest.getUsuario( this.grupo.getId_moderador() ).getNome(),this.grupo.getId_moderador() + "")){
-            entrarGrupo.setVisibility(View.GONE);
-        }
-
-
 
         Context c = this.getBaseContext();
         nome.setText(this.grupo.getNome());
@@ -107,8 +101,7 @@ public class GrupoDetalheActivity extends AppCompatActivity implements BottomNav
 
         Button entrarGrupo = view.findViewById(R.id.entrar_grupo);
 
-        String db = new ControllerDB(GrupoDetalheActivity.this).insertInscricaoData(
-                DataTest.getUsuario( this.grupo.getId_moderador() ).getNome(),this.grupo.getId_moderador() + "");
+        
 
         entrarGrupo.setVisibility(View.GONE);
 
