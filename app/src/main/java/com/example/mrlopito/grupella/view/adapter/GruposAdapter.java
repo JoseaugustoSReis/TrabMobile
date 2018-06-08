@@ -62,7 +62,7 @@ public class GruposAdapter extends BaseAdapter {
 
         //populando as Views
         nome.setText(grupo.getNome());
-        PicassoClient.downloadImage(c, grupo.getPhotoURL(), imagem);
+        //PicassoClient.downloadImage(c, grupo.getPhotoURL(), imagem);
 
         return view;
     }

@@ -72,7 +72,7 @@ public class GrupoDetalheActivity extends AppCompatActivity implements BottomNav
 
         Context c = this.getBaseContext();
         nome.setText(this.grupo.getNome());
-        PicassoClient.downloadImage(c, this.grupo.getPhotoURL(), imagem);
+        //PicassoClient.downloadImage(c, this.grupo.getPhotoURL(), imagem);
 
 
         Bundle bundle = new Bundle();
