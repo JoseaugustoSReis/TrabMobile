@@ -1,5 +1,12 @@
 package com.example.mrlopito.grupella.model.entity;
 
+import com.example.mrlopito.grupella.model.dao.ConfiguracaoFirebase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class User {
     private String cod;
     private String nome;
@@ -46,5 +53,20 @@ public class User {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public void insert() {
+        DatabaseReference databaseReference = ConfiguracaoFirebase.getFirebase();
+        databaseReference.child("user").child(String.valueOf(getCod())).setValue(this);
+    }
+
+    @Exclude
+    public Map<String, Object> toMap(){
+        HashMap<String, Object> hashUser = new HashMap<>();
+        hashUser.put("cod", getCod());
+        hashUser.put("nome", getNome());
+        hashUser.put("email", getEmail());
+        hashUser.put("senha", getSenha());
+        return hashUser;
     }
 }
