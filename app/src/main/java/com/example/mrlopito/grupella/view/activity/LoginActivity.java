@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void AbrirHome(View view) {
         if(!edtEmail.getText().toString().equals("") && !edtSenha.getText().toString().equals("")){
-            User user = new User();
+            user = new User();
             user.setEmail(edtEmail.getText().toString());
             user.setSenha(edtSenha.getText().toString());
             validarLogin();
