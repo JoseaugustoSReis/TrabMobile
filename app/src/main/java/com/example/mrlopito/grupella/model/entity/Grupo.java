@@ -1,31 +1,40 @@
 package com.example.mrlopito.grupella.model.entity;
 
 import java.io.Serializable;
+import java.util.LinkedList;
+import java.util.List;
 
 
 public class Grupo implements Serializable{
 
 
-    private int id_moderador;
+    private int codGrupo;
     private String nome;
     private String descricao;
     private String photoURL;
     private Boolean publico;
+    private List<User> participantes;
+    private User userInicial;
 
-    public Grupo(int id_moderador, String nome, String descricao, Boolean publico,String photoURL) {
-        this.id_moderador = id_moderador;
+    public Grupo(int id_moderador, String nome, String descricao, Boolean publico,String photoURL, User user) {
+        this.codGrupo = id_moderador;
         this.nome = nome;
         this.descricao = descricao;
         this.publico = publico;
         this.photoURL = photoURL;
+        this.userInicial = user;
+        this.participantes = new LinkedList<User>();
+        this.participantes.add(this.userInicial);
+
+
     }
 
-    public int getId_moderador() {
-        return id_moderador;
+    public int getCodeGrupo() {
+        return codGrupo;
     }
 
-    public void setId_moderador(int id_moderador) {
-        this.id_moderador = id_moderador;
+    public void setCodGrupo(int id_moderador) {
+        this.codGrupo = id_moderador;
     }
 
     public String getPhotoURL() {
