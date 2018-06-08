@@ -51,12 +51,9 @@ public class CadastroActivity extends AppCompatActivity {
         txtRetornarLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-<<<<<<< HEAD:app/src/main/java/com/example/mrlopito/grupella/view/activity/CadastroActivity.java
-                Intent it = new Intent(CadastroActivity.this, LoginActivity.class);
-                startActivity(it);
-=======
+
                 abrirLogin();
->>>>>>> origin/listagem-grupos:app/src/main/java/com/example/mrlopito/grupella/view/activity/ActivityCadastro.java
+
             }
         });
 
@@ -75,14 +72,14 @@ public class CadastroActivity extends AppCompatActivity {
     }
     private void alertToast(String s) {
 
-        Toast.makeText(ActivityCadastro.this, s, Toast.LENGTH_SHORT).show();
+        Toast.makeText(CadastroActivity.this, s, Toast.LENGTH_SHORT).show();
     }
     private void cadastrarUsuario(){
         authentication = ConfiguracaoFirebase.getFirebaseAuthentication();
         authentication.createUserWithEmailAndPassword(
                 user.getEmail(),
                 user.getSenha()
-        ).addOnCompleteListener(ActivityCadastro.this, new OnCompleteListener<AuthResult>() {
+        ).addOnCompleteListener(CadastroActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
@@ -91,7 +88,7 @@ public class CadastroActivity extends AppCompatActivity {
                     FirebaseUser firebaseUser = task.getResult().getUser();
                     user.setCod(identificadorUsuario);
                     user.insert();
-                    Preferences preferences = new Preferences(ActivityCadastro.this);
+                    Preferences preferences = new Preferences(CadastroActivity.this);
                     preferences.salvarUsuario(identificadorUsuario, user.getNome());
                     alertToast("Usuario cadastrado!");
                     abrirLogin();
@@ -121,7 +118,7 @@ public class CadastroActivity extends AppCompatActivity {
         });
     }
     public void abrirLogin(){
-        Intent it = new Intent(ActivityCadastro.this, LoginActivity.class);
+        Intent it = new Intent(CadastroActivity.this, LoginActivity.class);
         startActivity(it);
     }
 
