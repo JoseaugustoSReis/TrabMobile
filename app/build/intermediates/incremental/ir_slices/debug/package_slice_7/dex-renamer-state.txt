@@ -1,0 +1,4 @@
+#Fri Jun 08 11:20:46 AMT 2018
+base.0=/home/mrlopito/progmob/grupella/TrabMobile/app/build/intermediates/transforms/dexMerger/debug/7
+path.0=classes.dex
+renamed.0=classes.dex

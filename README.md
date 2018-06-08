@@ -1,2 +1,0 @@
-# TrabMobile
-a ver
