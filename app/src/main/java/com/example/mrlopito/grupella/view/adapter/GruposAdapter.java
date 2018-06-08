@@ -17,14 +17,14 @@ import com.example.mrlopito.grupella.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdapterGrupos extends BaseAdapter {
+public class GruposAdapter extends BaseAdapter {
     private final List<Grupo> grupos;
     private final Activity act;
     private final ListView listView;
 
     public List<Grupo> toFilter = new ArrayList<Grupo>();
 
-    public AdapterGrupos(List<Grupo> grupos, Activity act, ListView listView1) {
+    public GruposAdapter(List<Grupo> grupos, Activity act, ListView listView1) {
         this.grupos = grupos;
         this.act = act;
         this.listView = listView1;

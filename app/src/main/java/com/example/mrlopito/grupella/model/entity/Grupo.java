@@ -2,21 +2,30 @@ package com.example.mrlopito.grupella.model.entity;
 
 import java.io.Serializable;
 
-<<<<<<< HEAD
+
 public class Grupo implements Serializable{
-=======
-public class Grupo implements Serializable {
->>>>>>> fe7dd1aeba00a913225c1fa2944ae13b912c54ba
+
+
+    private int id_moderador;
     private String nome;
     private String descricao;
     private String photoURL;
     private Boolean publico;
 
-    public Grupo(String nome, String descricao, Boolean publico,String photoURL) {
+    public Grupo(int id_moderador, String nome, String descricao, Boolean publico,String photoURL) {
+        this.id_moderador = id_moderador;
         this.nome = nome;
         this.descricao = descricao;
         this.publico = publico;
         this.photoURL = photoURL;
+    }
+
+    public int getId_moderador() {
+        return id_moderador;
+    }
+
+    public void setId_moderador(int id_moderador) {
+        this.id_moderador = id_moderador;
     }
 
     public String getPhotoURL() {
