@@ -65,6 +65,8 @@ public class LoginActivity extends AppCompatActivity {
                     abrirHome();
                     alertToast("Login Efetuado com Sucesso");
                 }
+                else
+                    alertToast("Email e/ou senha inválidos");
             }
         });
     }
