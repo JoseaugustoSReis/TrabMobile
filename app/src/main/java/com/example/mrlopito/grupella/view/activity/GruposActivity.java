@@ -1,26 +1,20 @@
 package com.example.mrlopito.grupella.view.activity;
 
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.mrlopito.grupella.R;
 import com.example.mrlopito.grupella.model.service.DataTest;
-import com.example.mrlopito.grupella.view.adapter.AdapterGrupos;
+import com.example.mrlopito.grupella.view.adapter.GruposAdapter;
 import com.example.mrlopito.grupella.model.entity.Grupo;
 
-import java.util.LinkedList;
 import java.util.List;
-
-import static android.webkit.ConsoleMessage.MessageLevel.LOG;
 
 public class GruposActivity extends AppCompatActivity {
 
@@ -31,10 +25,9 @@ public class GruposActivity extends AppCompatActivity {
 
 
 
-
         List<Grupo> grupos = DataTest.todosOsGrupos();
         final ListView listView = (ListView) findViewById(R.id.listview);
-        AdapterGrupos adapter = new AdapterGrupos(grupos, this, listView);
+        GruposAdapter adapter = new GruposAdapter(grupos, this, listView);
 
         listView.setAdapter(adapter);
 

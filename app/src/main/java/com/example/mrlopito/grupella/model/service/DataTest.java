@@ -8,6 +8,9 @@ import java.util.List;
 
 public class DataTest {
 
+    public static String[] inscricoes = new String[10];
+    public static int index = 0;
+
     public static List<Grupo> todosOsGrupos() {
         List<Grupo> eList = new LinkedList<Grupo>();
         eList.add(new Grupo(0,"Estruturada de dados", "Grupo de estudo de ESD", true, "https://tremendadespedida.com/wp-content/uploads/2016/11/Restaurante-despedida-soltero-1.jpg"));
@@ -33,6 +36,18 @@ public class DataTest {
         }
 
         return todosOsUsuarios().get( 0 );
+    }
+
+
+    public static boolean addInscricoes(String id_usuario, String id_grupo) {
+
+        inscricoes[index++] = "usuario: " + id_usuario + " grupo: " + id_grupo;
+        return true;
+
+    }
+
+    public static String[] getInscricoes(){
+        return inscricoes;
     }
 
 

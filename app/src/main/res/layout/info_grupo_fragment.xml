@@ -11,12 +11,13 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/entrar_grupo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
             android:background="@drawable/button_shape"
             android:text="Entrar no Grupo"
+            android:onClick="entrarGrupo"
             android:textColor="@color/md_white_1000" />
 
 

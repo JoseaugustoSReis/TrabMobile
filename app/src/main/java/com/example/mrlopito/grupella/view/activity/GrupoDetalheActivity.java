@@ -7,10 +7,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mrlopito.grupella.R;
+import com.example.mrlopito.grupella.model.database.ControllerDB;
+import com.example.mrlopito.grupella.model.database.DataBaseSQL;
+import com.example.mrlopito.grupella.model.database.InscricaoData;
 import com.example.mrlopito.grupella.model.entity.Grupo;
 import com.example.mrlopito.grupella.model.service.DataTest;
 import com.example.mrlopito.grupella.model.service.PicassoClient;
@@ -35,6 +39,7 @@ public class GrupoDetalheActivity extends AppCompatActivity implements BottomNav
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.informacoes_grupo);
 
@@ -50,6 +55,7 @@ public class GrupoDetalheActivity extends AppCompatActivity implements BottomNav
         setCurrentTab(mNavigator.getCurrentPosition());
 
         initView();
+
     }
 
     public void initView(){
@@ -60,15 +66,19 @@ public class GrupoDetalheActivity extends AppCompatActivity implements BottomNav
         imagem = (ImageView)
                 findViewById(R.id.detalhe_grupo_imagem);
 
-
         this.grupo =
                 (Grupo) getIntent().getSerializableExtra("grupo");
+
+        Button entrarGrupo = findViewById(R.id.entrar_grupo);
+        if(new ControllerDB(GrupoDetalheActivity.this).inscricao_grupo(DataTest.getUsuario( this.grupo.getId_moderador() ).getNome(),this.grupo.getId_moderador() + "")){
+            entrarGrupo.setVisibility(View.GONE);
+        }
+
 
 
         Context c = this.getBaseContext();
         nome.setText(this.grupo.getNome());
         PicassoClient.downloadImage(c, this.grupo.getPhotoURL(), imagem);
-
 
 
         Bundle bundle = new Bundle();
@@ -85,12 +95,25 @@ public class GrupoDetalheActivity extends AppCompatActivity implements BottomNav
         // Iniciar os campos buscando no layout do Fragment
         TextView descricao
                = (TextView) view.findViewById(R.id.detalhe_grupo_descricao);
+
         TextView nomeUsuario
                 = (TextView) view.findViewById(R.id.detalhe_grupo_nome_usuario);
 
         descricao.setText( this.grupo.getDescricao() );
         nomeUsuario.setText( DataTest.getUsuario( this.grupo.getId_moderador() ).getNome() );
     }
+
+    public void entrarGrupo(View view) {
+
+        Button entrarGrupo = view.findViewById(R.id.entrar_grupo);
+
+        String db = new ControllerDB(GrupoDetalheActivity.this).insertInscricaoData(
+                DataTest.getUsuario( this.grupo.getId_moderador() ).getNome(),this.grupo.getId_moderador() + "");
+
+        entrarGrupo.setVisibility(View.GONE);
+
+    }
+
 
     @Override
     public void onBottomNavigatorViewItemClick(int position, View view) {

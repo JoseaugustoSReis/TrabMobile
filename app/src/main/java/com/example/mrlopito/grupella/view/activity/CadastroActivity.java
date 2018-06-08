@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.example.mrlopito.grupella.R;
 
-public class ActivityCadastro extends AppCompatActivity {
+public class CadastroActivity extends AppCompatActivity {
 
     private TextView txtRetornarLogin;
     private Button btnCadastrar;
@@ -25,7 +25,7 @@ public class ActivityCadastro extends AppCompatActivity {
         txtRetornarLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(ActivityCadastro.this, LoginActivity.class);
+                Intent it = new Intent(CadastroActivity.this, LoginActivity.class);
                 startActivity(it);
             }
         });

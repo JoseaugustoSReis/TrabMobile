@@ -5,11 +5,8 @@ import java.io.Serializable;
 
 public class Grupo implements Serializable{
 
-<<<<<<< HEAD
-    private int id_moderador;
-=======
 
->>>>>>> origin/listagem-grupos
+    private int id_moderador;
     private String nome;
     private String descricao;
     private String photoURL;

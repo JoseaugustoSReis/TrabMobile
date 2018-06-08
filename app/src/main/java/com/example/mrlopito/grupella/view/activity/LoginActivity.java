@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(it);
     }
     public void AbrirCadastro(View view){
-        Intent it = new Intent(LoginActivity.this, ActivityCadastro.class);
+        Intent it = new Intent(LoginActivity.this, CadastroActivity.class);
         startActivity(it);
     }
 

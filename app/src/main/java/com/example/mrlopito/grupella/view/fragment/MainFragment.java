@@ -9,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 
 import com.example.mrlopito.grupella.R;
@@ -53,7 +52,7 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        return inflater.inflate(R.layout.info_grupo_fragment, container, false);
     }
 
     @Override
@@ -114,4 +113,5 @@ public class MainFragment extends Fragment {
             }
         }
     }
+
 }
