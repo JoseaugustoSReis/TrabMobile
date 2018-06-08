@@ -1,6 +1,10 @@
 package com.example.mrlopito.grupella.model.entity;
 
+import com.example.mrlopito.grupella.model.dao.ConfiguracaoFirebase;
+
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Grupo implements Serializable{
@@ -64,5 +68,26 @@ public class Grupo implements Serializable{
     public String toString() {
         return "Curso: " + nome + " Descrição: " +
                 descricao + " publico: " + publico;
+    }
+
+
+    public void insert() {
+
+        DatabaseReference databaseReference = ConfiguracaoFirebase.getFirebase();
+        databaseReference.child("grupo").child(String.valueOf(getId_moderador())).setValue(this);
+
+    }
+
+    @Exclude
+    public Map<String, Object> toMap(){
+
+        HashMap<String, Object> hashUser = new HashMap<>();
+        hashUser.put("id_moderador", getId_moderador());
+        hashUser.put("nome", getNome());
+        hashUser.put("descricao", getDescricao());
+        hashUser.put("photoURL", getPhotoURL());
+        hashUser.put("publico", getPublico());
+        return hashUser;
+
     }
 }
