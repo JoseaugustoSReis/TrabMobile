@@ -2,14 +2,15 @@
 
 <ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.activity.CadastroActivity">
 
-    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.activity.CadastroActivity">
+        >
 
         <ImageView
             android:id="@+id/imageView3"
@@ -37,6 +38,8 @@
             android:ems="10"
             android:hint="Insira seu nome"
             android:inputType="text"
+            android:background="@drawable/edit_style"
+            android:drawableRight="@drawable/ic_action_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
@@ -52,6 +55,8 @@
             android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="Insira seu e-mail"
+            android:background="@drawable/edit_style"
+            android:drawableRight="@drawable/ic_action_email"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.507"
@@ -69,6 +74,8 @@
             android:layout_marginTop="24dp"
             android:ems="10"
             android:hint="Insira sua senha"
+            android:background="@drawable/edit_style"
+            android:drawableRight="@drawable/ic_action_padlock"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -85,6 +92,8 @@
             android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="Repita sua senha"
+            android:background="@drawable/edit_style"
+            android:drawableRight="@drawable/ic_action_padlock"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.507"
@@ -102,6 +111,8 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="20dp"
             android:text="Salvar"
+            android:background="@drawable/button_salvar"
+            android:drawableRight="@drawable/ic_action_save"
             app:layout_constraintBottom_toTopOf="@+id/txtRetornarLogin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

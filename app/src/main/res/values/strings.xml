@@ -11,4 +11,13 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <string name="title_activity_grupo_cadastor">Novo Grupo</string>
+
+
+
+    <string-array name="lista_imagens">
+        <item>Selecione uma imagem</item>
+        <item>imagens um</item>
+    </string-array>
 </resources>
