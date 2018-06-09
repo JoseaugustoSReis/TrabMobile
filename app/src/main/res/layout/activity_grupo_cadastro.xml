@@ -45,7 +45,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
         <EditText
-            android:id="@+id/editEmail"
+            android:id="@+id/editDescricao"
             android:layout_width="303dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -54,7 +54,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/edit_style"
-            android:drawableRight="@drawable/ic_action_email"
+            android:drawableRight="@drawable/ic_action_description"
             android:ems="10"
             android:hint="Descrição"
             android:inputType="textEmailAddress"
@@ -78,6 +78,20 @@
             app:layout_constraintTop_toBottomOf="@+id/edtNome"
             tools:ignore="MissingConstraints" />
 
+        <CheckBox
+            android:id="@+id/cboxPublico"
+            android:layout_width="303dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Grupo Público"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editDescricao" />
+
         <Button
             android:id="@+id/btnCadastrar"
             android:layout_width="303dp"
@@ -96,7 +110,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editEmail"
+            app:layout_constraintTop_toBottomOf="@+id/cboxPublico"
             app:layout_constraintVertical_bias="1.0" />
 
     </android.support.constraint.ConstraintLayout>

@@ -1,6 +1,9 @@
 package com.example.mrlopito.grupella.model.entity;
 
 import com.example.mrlopito.grupella.model.dao.ConfiguracaoFirebase;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
@@ -18,7 +21,7 @@ public class Grupo implements Serializable{
     private String photoURL;
     private Boolean publico;
 
-    public Grupo(int id_moderador, String nome, String descricao, Boolean publico,String photoURL) {
+    public Grupo(int id_moderador, String nome, String descricao, Boolean publico, String photoURL) {
         this.id_moderador = id_moderador;
         this.nome = nome;
         this.descricao = descricao;
@@ -76,6 +79,35 @@ public class Grupo implements Serializable{
     public void insert() {
         DatabaseReference databaseReference = ConfiguracaoFirebase.getFirebase();
         databaseReference.child("grupo").child(String.valueOf(getId_moderador())).setValue(this);
+
+        databaseReference.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
+                Grupo grupo = dataSnapshot.getValue(Grupo.class);
+                System.out.println("Nome: " + grupo.nome);
+                System.out.println("Descrição: " + grupo.descricao);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Exclude
