@@ -28,6 +28,13 @@ public class Grupo implements Serializable{
         this.publico = publico;
         this.photoURL = photoURL;
     }
+    public Grupo(int id_moderador, String nome, String descricao, Boolean publico) {
+        this.id_moderador = id_moderador;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.publico = publico;
+        this.photoURL = photoURL;
+    }
 
     public int getId_moderador() {
         return id_moderador;

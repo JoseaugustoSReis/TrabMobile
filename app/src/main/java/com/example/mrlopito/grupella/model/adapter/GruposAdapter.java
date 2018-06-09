@@ -25,10 +25,11 @@ public class GruposAdapter extends ArrayAdapter<Grupo> {
 
     @Override
     public View getView(int position, View convertView,  ViewGroup parent) {
-        View view = null;
+        /*View view = null;
         if(grupos!=null){
-            
+
         }
-        return super.getView(position, convertView, parent);
+        return super.getView(position, convertView, parent);*/
+        return null;
     }
 }

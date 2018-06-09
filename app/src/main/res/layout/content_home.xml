@@ -7,5 +7,19 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".view.activity.HomeActivity"
     tools:showIn="@layout/app_bar_home">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listaGrupos">
+
+        </ListView>
+
+    </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>

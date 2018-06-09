@@ -33,6 +33,7 @@ public class GrupoCadastroActivity extends AppCompatActivity {
     private EditText editDescricao;
     private CheckBox cboxPublico;
     private Grupo grupo;
+    private DatabaseReference firebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,11 +64,9 @@ public class GrupoCadastroActivity extends AppCompatActivity {
                 0,
                 edtNome.getText().toString(),
                 editDescricao.getText().toString(),
-                cboxPublico.isChecked(),
-                "https://tremendadespedida.com/wp-content/uploads/2016/11/Restaurante-despedida-soltero-1.jpg"
-        );
+                cboxPublico.isChecked());
 
-        cadastrarGrupo();
+        insert(grupo);
 
     }
 
@@ -81,6 +80,18 @@ public class GrupoCadastroActivity extends AppCompatActivity {
 
         this.grupo.insert();
 
+    }
+    private boolean insert(Grupo grupo){
+        try{
+            firebase = ConfiguracaoFirebase.getFirebase().child("grupos");
+            firebase.child(grupo.getNome()).setValue(grupo);
+            alertToast("Grupo criado com sucesso!");
+            return true;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 
 }
