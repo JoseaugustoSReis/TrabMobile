@@ -14,11 +14,7 @@
         <activity
             android:name=".view.activity.SplashActivity"
             android:theme="@style/AppCompat.FullScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".view.activity.GruposActivity" />
         <activity android:name=".view.activity.GrupoDetalheActivity" />
@@ -32,7 +28,13 @@
             android:name=".view.activity.GrupoCadastroActivity"
             android:label="@string/title_activity_grupo_cadastor"
             android:theme="@style/AppThemeDark" />
-        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".view.activity.ChatActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
