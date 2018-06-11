@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.mrlopito.grupella.R;
 import com.example.mrlopito.grupella.helper.Base64Custom;
 import com.example.mrlopito.grupella.helper.Preferences;
+import com.example.mrlopito.grupella.helper.StringHelper;
 import com.example.mrlopito.grupella.model.dao.ConfiguracaoFirebase;
 import com.example.mrlopito.grupella.model.entity.User;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +24,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -36,6 +38,7 @@ public class CadastroActivity extends AppCompatActivity {
     private EditText edtNome;
     private User user;
     private FirebaseAuth authentication;
+    private DatabaseReference firebase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,8 +93,11 @@ public class CadastroActivity extends AppCompatActivity {
                     user.insert();
                     Preferences preferences = new Preferences(CadastroActivity.this);
                     preferences.salvarUsuario(identificadorUsuario, user.getNome());
-                    alertToast("Usuario cadastrado!");
-                    abrirLogin();
+                    if(criarUsuarioGeral(user)){
+                        alertToast("Usuario cadastrado!");
+                        abrirLogin();
+                    }
+
                 }
                 else{
                     String exception = "";
@@ -120,6 +126,19 @@ public class CadastroActivity extends AppCompatActivity {
     public void abrirLogin(){
         Intent it = new Intent(CadastroActivity.this, LoginActivity.class);
         startActivity(it);
+    }
+    public boolean criarUsuarioGeral(User user){
+        try{
+            firebase = ConfiguracaoFirebase.getFirebase().child("usuarios");
+            firebase.child(StringHelper.encodeEmail(user.getEmail())).setValue(user);
+
+
+            return true;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 
 }

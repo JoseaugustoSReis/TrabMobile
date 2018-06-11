@@ -57,7 +57,9 @@ public class GrupoCadastroActivity extends AppCompatActivity {
                 cboxPublico.isChecked());
 
         if(insert(grupo)){
-            Intent it = new Intent(GrupoCadastroActivity.this, ChatActivity.class);
+            Intent it = new Intent(GrupoCadastroActivity.this, AddMemberActivity.class);
+            it.putExtra("grupo", grupo);
+
             startActivity(it);
         }
 
