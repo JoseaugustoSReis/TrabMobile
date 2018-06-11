@@ -27,7 +27,7 @@
                 android:inputType="textEmailAddress" />
 
             <android.support.design.widget.FloatingActionButton
-                android:id="@+id/floatingActionButton"
+                android:id="@+id/fabAddByEmail"
                 android:layout_width="93dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
