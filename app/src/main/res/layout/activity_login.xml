@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.LoginActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
 
     <ImageView
         android:id="@+id/imageView2"
@@ -21,37 +25,60 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_logo" />
 
-    <EditText
-        android:id="@+id/edtEmail"
-        android:layout_width="303dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:hint="Insira seu e-mail"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <EditText
-        android:id="@+id/edtSenha"
-        android:layout_width="303dp"
-        android:layout_height="wrap_content"
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="308dp"
+        android:layout_height="183dp"
+        android:layout_gravity="center"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="Insira sua senha"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        card_view:cardCornerRadius="4dp"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="272dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edit_style"
+                android:drawableLeft="@drawable/ic_action_email"
+                android:ems="10"
+                android:hint="Insira seu e-mail"
+                android:inputType="textEmailAddress"
+                android:shadowColor="@color/md_white_1000" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <EditText
+                android:id="@+id/edtSenha"
+                android:layout_width="273dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/edit_style"
+                android:drawableLeft="@drawable/ic_action_padlock"
+                android:ems="10"
+                android:hint="Insira sua senha"
+                android:inputType="textPassword" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
 
     <Button
         android:id="@+id/btnLogin"
@@ -62,11 +89,15 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
+        android:textColor="@color/md_white_1000"
+        android:textSize="15dp"
+        android:textAllCaps="false"
+        android:background="@drawable/button_login"
         android:onClick="AbrirHome"
         android:text="Logar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
+        app:layout_constraintTop_toBottomOf="@+id/card_view" />
 
     <Button
         android:id="@+id/btnCadastro"
@@ -78,8 +109,11 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
+        android:textColor="@color/md_white_1000"
         android:onClick="AbrirCadastro"
         android:text="Fazer cadastro"
+        android:textAllCaps="false"
+        android:background="@drawable/button_shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"

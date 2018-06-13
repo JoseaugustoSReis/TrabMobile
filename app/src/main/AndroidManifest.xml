@@ -27,7 +27,7 @@
             android:name=".view.activity.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".view.activity.LoginActivity" />
+        <activity android:name=".view.activity.LoginActivity"/>
         <activity android:name=".view.activity.CadastroActivity" />
         <activity
             android:name=".view.activity.GrupoCadastroActivity"
