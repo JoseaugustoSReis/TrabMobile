@@ -21,6 +21,10 @@ public class Grupo implements Serializable{
     private String photoURL;
     private Boolean publico;
 
+    public Grupo(){
+
+    }
+
     public Grupo(int id_moderador, String nome, String descricao, Boolean publico, String photoURL) {
         this.id_moderador = id_moderador;
         this.nome = nome;
