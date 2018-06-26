@@ -15,13 +15,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.mrlopito.grupella.R;
 import com.example.mrlopito.grupella.model.adapter.GruposAdapter;
 import com.example.mrlopito.grupella.model.dao.ConfiguracaoFirebase;
 import com.example.mrlopito.grupella.model.entity.Grupo;
 import com.example.mrlopito.grupella.model.entity.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,6 +41,10 @@ public class HomeActivity extends AppCompatActivity
     private ArrayList<Grupo> grupos;
     private DatabaseReference firebase;
     private ValueEventListener valueEventListener;
+    private TextView txtMainNome;
+    private TextView txtMainEmail;
+    private FirebaseUser fbUser;
+    private FirebaseAuth auth;
     private User user;
 
     @Override
@@ -65,7 +73,15 @@ public class HomeActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         Intent itent = getIntent();
+
+        View headerView = navigationView.getHeaderView(0);
+
+        fbUser = FirebaseAuth.getInstance().getCurrentUser();
         user = (User)itent.getSerializableExtra("user");
+        txtMainNome = (TextView) headerView.findViewById(R.id.testeNome);
+        //txtMainEmail = (TextView) findViewById(R.id.txtMainEmailMenu);
+        //txtMainEmail.setText("12");
+        txtMainNome.setText(user.getEmail());
         listaGrupos = findViewById(R.id.listaGrupos);
         grupos = new ArrayList<Grupo>();
         adapterGrupos = new GruposAdapter(this, grupos);

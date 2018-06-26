@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText edtEmail;
@@ -46,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
             user = new User();
             user.setEmail(edtEmail.getText().toString());
             user.setSenha(edtSenha.getText().toString());
-            validarLogin();
+            validarLogin(user);
         }
         else{
             alertToast("Insira seu e-mail e senha!");
@@ -64,12 +65,16 @@ public class LoginActivity extends AppCompatActivity {
         it.putExtra("user", this.user);
         startActivity(it);
     }
-    private void validarLogin(){
+    private void validarLogin(User user1){
+
         authentication = ConfiguracaoFirebase.getFirebaseAuthentication();
         authentication.signInWithEmailAndPassword(user.getEmail(), user.getSenha()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    FirebaseUser fb = authentication.getCurrentUser();
+                    user.setNome(fb.getDisplayName());
+
                     abrirHome();
                     alertToast("Login Efetuado com Sucesso");
                 }
@@ -81,7 +86,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private void abrirHome() {
         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+        User user1 = user;
 
+        intent.putExtra("user",user1 );
         startActivity(intent);
 
     }
