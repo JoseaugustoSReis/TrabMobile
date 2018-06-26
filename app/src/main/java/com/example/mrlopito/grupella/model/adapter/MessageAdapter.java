@@ -29,12 +29,13 @@ public class MessageAdapter extends ArrayAdapter<TexteMessage> {
         View view = null;
         if(mensagens !=null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.item_grupo,parent, false );
-            TextView txtNome = view.findViewById(R.id.item_usuario);
+            view = inflater.inflate(R.layout.item_message,parent, false );
+            TextView txtNome = view.findViewById(R.id.msg_from);
 
             TextView txtMensagem = view.findViewById(R.id.item_mensagem);
             TexteMessage mensagem = mensagens.get(position);
-            txtNome.setText(mensagem.getUser().getNome());
+            txtNome.setText("ola");
+            txtMensagem.setText(mensagem.getMsg());
 
         }
         return view;

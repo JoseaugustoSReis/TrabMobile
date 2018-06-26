@@ -1,15 +1,31 @@
 package com.example.mrlopito.grupella.model.entity;
 
-public class TexteMessage extends Message {
+public class TexteMessage{
+    private User user;
     private String msg;
+    private long cod;
+
+
+    public User getUser() {
+        return user;
+    }
+
+    public long getCod() {
+        return cod;
+    }
 
     public TexteMessage(long codMessage, User fromUser, String msg) {
-        super(codMessage, fromUser);
+        this.cod = codMessage;
+        this.user = fromUser;
         this.msg = msg;
+
+
     }
 
-    public User getUser(){
-        return super.getFromUser();
+    public String getMsg() {
+        return msg;
     }
-    
+
+
+
 }

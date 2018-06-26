@@ -12,7 +12,9 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.mrlopito.grupella.R;
+import com.example.mrlopito.grupella.helper.StringHelper;
 import com.example.mrlopito.grupella.model.dao.ConfiguracaoFirebase;
+import com.example.mrlopito.grupella.model.entity.Chat;
 import com.example.mrlopito.grupella.model.entity.Grupo;
 import com.google.firebase.database.DatabaseReference;
 
@@ -51,7 +53,7 @@ public class GrupoCadastroActivity extends AppCompatActivity {
     public void OnClickCadastro(View view){
 
         grupo = new Grupo(
-                0,
+                StringHelper.retornaCodChat(),
                 edtNome.getText().toString(),
                 editDescricao.getText().toString(),
                 cboxPublico.isChecked());
@@ -72,15 +74,15 @@ public class GrupoCadastroActivity extends AppCompatActivity {
 
     }
 
-    private void cadastrarGrupo(){
 
-        this.grupo.insert();
-
-    }
     private boolean insert(Grupo grupo){
         try{
             firebase = ConfiguracaoFirebase.getFirebase().child("grupos");
             firebase.child(grupo.getNome()).setValue(grupo);
+            firebase =  ConfiguracaoFirebase.getFirebase().child("chat");
+            Chat chat = new Chat(grupo.getCode(), grupo);
+            firebase.child(chat.getCodChat()+"").setValue(chat);
+
             alertToast("Grupo criado com sucesso!");
             return true;
         }
