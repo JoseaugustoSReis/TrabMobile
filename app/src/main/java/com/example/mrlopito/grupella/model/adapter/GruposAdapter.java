@@ -35,7 +35,7 @@ public class GruposAdapter extends ArrayAdapter<Grupo> {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.item_grupo,parent, false );
             TextView txtNome = view.findViewById(R.id.nomeGrupoMain);
-            TextView txtEmail = view.findViewById(R.id.txtViewEmailPart);
+
             Grupo grupo = grupos.get(position);
             txtNome.setText(grupo.getNome());
 

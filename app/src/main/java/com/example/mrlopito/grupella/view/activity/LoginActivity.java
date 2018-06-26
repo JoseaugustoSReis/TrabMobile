@@ -61,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void AbrirCadastro(View view){
         Intent it = new Intent(LoginActivity.this, CadastroActivity.class);
+        it.putExtra("user", this.user);
         startActivity(it);
     }
     private void validarLogin(){
@@ -80,6 +81,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void abrirHome() {
         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+
         startActivity(intent);
 
     }

@@ -4,11 +4,12 @@ import com.example.mrlopito.grupella.model.dao.ConfiguracaoFirebase;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class User {
+public class User implements Serializable{
     private String cod;
     private String nome;
     private String email;
