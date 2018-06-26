@@ -7,5 +7,9 @@ public class TexteMessage extends Message {
         super(codMessage, fromUser);
         this.msg = msg;
     }
+
+    public User getUser(){
+        return super.getFromUser();
+    }
     
 }
