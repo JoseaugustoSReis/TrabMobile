@@ -25,13 +25,14 @@
         <activity android:name=".view.activity.GrupoDetalheActivity" />
         <activity
             android:name=".view.activity.HomeActivity"
-            android:label="@string/title_activity_home"
+            android:label="Grupos"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".view.activity.LoginActivity"/>
-        <activity android:name=".view.activity.CadastroActivity" />
+        <activity android:name=".view.activity.CadastroActivity"
+            android:theme="@style/AppThemeDark" />
         <activity
             android:name=".view.activity.GrupoCadastroActivity"
-            android:label="@string/title_activity_grupo_cadastor"
+            android:label="Cadastro"
             android:theme="@style/AppThemeDark" />
         <activity android:name=".view.activity.ChatActivity">
 

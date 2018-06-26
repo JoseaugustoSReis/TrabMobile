@@ -7,6 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.activity.CadastroActivity">
 
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -73,10 +74,10 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:ems="10"
+            android:inputType="textPassword"
             android:hint="Insira sua senha"
             android:background="@drawable/edit_style"
             android:drawableRight="@drawable/ic_action_padlock"
-            android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editEmail" />

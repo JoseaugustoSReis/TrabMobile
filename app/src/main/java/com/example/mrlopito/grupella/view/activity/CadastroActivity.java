@@ -51,6 +51,7 @@ public class CadastroActivity extends AppCompatActivity {
         edtSenhaConf = findViewById(R.id.edtSenha2);
         edtNome = findViewById(R.id.edtNome);
 
+
         txtRetornarLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
