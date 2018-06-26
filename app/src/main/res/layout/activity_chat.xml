@@ -9,6 +9,7 @@
 
 
     <ListView
+        android:id="@+id/listaMensagens"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/linear"
@@ -30,6 +31,7 @@
             android:layout_marginTop="3dp"
             android:background="@drawable/edit_style"
             android:hint="Insira sua mensagem"
+            android:id="@+id/edtNewMessage"
 
             android:textColorLink="@android:color/holo_green_dark" />
 
@@ -45,7 +47,8 @@
             android:layout_weight="1"
             android:clickable="true"
             android:src="@drawable/ic_action_send_white"
-            app:backgroundTint="@android:color/holo_green_dark" />
+            app:backgroundTint="@android:color/holo_green_dark"
+            android:onClick="insertMessage"/>
     </LinearLayout>
 
 </RelativeLayout>

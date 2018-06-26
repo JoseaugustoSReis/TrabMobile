@@ -1,5 +1,6 @@
 package com.example.mrlopito.grupella.model.entity;
 
+import com.example.mrlopito.grupella.helper.StringHelper;
 import com.example.mrlopito.grupella.model.dao.ConfiguracaoFirebase;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -20,10 +21,20 @@ public class Grupo implements Serializable{
     private String descricao;
     private String photoURL;
     private Boolean publico;
+    private long code;
 
     public Grupo(){
 
     }
+    public Grupo(long code, String nome, String descricao, Boolean publico) {
+
+        this.nome = nome;
+        this.descricao = descricao;
+        this.publico = publico;
+
+        this.code = code;
+    }
+
 
     public Grupo(int id_moderador, String nome, String descricao, Boolean publico, String photoURL) {
         this.id_moderador = id_moderador;
@@ -31,6 +42,7 @@ public class Grupo implements Serializable{
         this.descricao = descricao;
         this.publico = publico;
         this.photoURL = photoURL;
+        this.code = StringHelper.retornaCodChat();
     }
     public Grupo(int id_moderador, String nome, String descricao, Boolean publico) {
         this.id_moderador = id_moderador;
@@ -129,5 +141,9 @@ public class Grupo implements Serializable{
         hashUser.put("imagem", getPhotoURL());
         hashUser.put("publico", getPublico());
         return hashUser;
+    }
+
+    public long getCode() {
+        return this.code;
     }
 }

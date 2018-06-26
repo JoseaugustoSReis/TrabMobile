@@ -81,7 +81,7 @@ public class HomeActivity extends AppCompatActivity
         txtMainNome = (TextView) headerView.findViewById(R.id.testeNome);
         //txtMainEmail = (TextView) findViewById(R.id.txtMainEmailMenu);
         //txtMainEmail.setText("12");
-        txtMainNome.setText(user.getEmail());
+        txtMainNome.setText("12");
         listaGrupos = findViewById(R.id.listaGrupos);
         grupos = new ArrayList<Grupo>();
         adapterGrupos = new GruposAdapter(this, grupos);

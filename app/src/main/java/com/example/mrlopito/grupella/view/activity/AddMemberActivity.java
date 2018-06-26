@@ -66,7 +66,7 @@ public class AddMemberActivity extends AppCompatActivity {
         fabIniciarChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddMemberActivity.this, ChatActivity.class);
+                Intent intent = new Intent(AddMemberActivity.this, HomeActivity.class);
                 intent.putExtra("grupo", grupo);
                 startActivity(intent);
             }
@@ -86,6 +86,7 @@ public class AddMemberActivity extends AppCompatActivity {
                 usuarios.clear();
                 for(DataSnapshot dados: dataSnapshot.getChildren()){
                     User newUser = dados.getValue(User.class);
+
                     usuarios.add(newUser);
                 }
                 participantes.clear();
